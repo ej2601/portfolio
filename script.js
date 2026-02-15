@@ -561,7 +561,7 @@ function initModals() {
             "home-page.PNG",
             "artwork-detail.PNG",
             "artist-profile.PNG"
-            // Add more screenshots here if you have them (e.g., cart, admin dashboard, checkout)
+             
         ],
         video: "", // Replace with actual YouTube embed URL if you make a demo video, otherwise leave empty
         overview: "IndiGalleria is a comprehensive, production-ready art gallery and e-commerce platform built entirely with React. It connects artists, buyers, and resellers with role-based dashboards (User, Artist, Admin). The application allows users to:",
@@ -592,7 +592,7 @@ function initModals() {
                 "React Data Table Component for data management",
                 "React Helmet Async for SEO optimization"
             ],
-            backend: [] // Frontend-only React application (no custom backend shown)
+             
         },
         challenges: [
             {
@@ -633,7 +633,7 @@ function initModals() {
                 ]
             }
         ],
-        github: "",  
+        
         demo: "https://indigalleria.com"
     }
 };
