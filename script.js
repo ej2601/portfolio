@@ -368,196 +368,275 @@ function initModals() {
 
     // Project data
     const projectsData = {
-        project1: {
-            title: "Image Generation Platform",
-            gallery: [
-                "image cafe -3.PNG",
-                "image cafe -1.PNG",
-                "image cafe -2.PNG"
-            ],
-            video: "https://www.youtube.com/embed/XiYhNvjR6wY",  // Replace with actual video ID
-            overview: "MyCafe is a sophisticated image generation and sharing platform built with Laravel. The application allows users to:",
-            overviewList: ["Generate AI-powered images using the Hugging Face API", "Customize image dimensions and settings", "Share generated images with the community", "Follow other creators and build community", "Like and interact with images", "Search and explore images by categories", "Download images with permission controls", "Maintain personal galleries of creations"],
+    project1: {
+        title: "Image Generation Platform",
+        gallery: [
+            "image cafe -3.PNG",
+            "image cafe -1.PNG",
+            "image cafe -2.PNG"
+        ],
+        video: "https://www.youtube.com/embed/XiYhNvjR6wY",
+        overview: "MyCafe is a sophisticated image generation and sharing platform built with Laravel. The application allows users to:",
+        overviewList: ["Generate AI-powered images using the Hugging Face API", "Customize image dimensions and settings", "Share generated images with the community", "Follow other creators and build community", "Like and interact with images", "Search and explore images by categories", "Download images with permission controls", "Maintain personal galleries of creations"],
 
-            techStack: {
-                frontend: ["Tailwind CSS for responsive design", "Alpine.js for reactive components", "Blade Templates for dynamic views", "Font Awesome for iconography", "Axios for AJAX requests"],
-                backend: ["Laravel PHP framework", "MySQL database", "Hugging Face API integration", "File Storage System for images"]
-            },
-            challenges: [
-                {
-                    title: "Performance",
-                    details: ["Implementing lazy loading for galleries", "Optimizing database queries"]
-                },
-                {
-                    title: "API Integration",
-                    details: ["Managing API rate limiting", "Handling timeouts and failures", "Implementing error handling"]
-                },
-                {
-                    title: "User Experience",
-                    details: ["Building responsive image galleries", "Implementing smooth infinite scroll", "Creating intuitive generation interface", "Managing loading states effectively"]
-                },
-                {
-                    title: "Storage",
-                    details: ["Efficient image storage implementation", "Temporary file management"]
-                },
-
-            ],
-            github: "https://github.com/ej2601/image_generation_platform",
-            demo: "https://youtu.be/XiYhNvjR6wY"
+        techStack: {
+            frontend: ["Tailwind CSS for responsive design", "Alpine.js for reactive components", "Blade Templates for dynamic views", "Font Awesome for iconography", "Axios for AJAX requests"],
+            backend: ["Laravel PHP framework", "MySQL database", "Hugging Face API integration", "File Storage System for images"]
         },
-        project2: {
-            title: "Real-Time Chat Application",
-            gallery: [
-                "chat_app_1.PNG", // Screenshot of chat room selection
-                "chat_app_2.PNG", // Main chat interface
-                "chat_app_3.PNG" // Profile editing screen
-            ],
-            video: "https://youtube.com/embed/FFcZ-qWmQXQ", // Add your demo video
-            overview: "A modern real-time chat application built with MERN stack (MongoDB, Express.js, Vue.js, Node.js) featuring Socket.IO for real-time communication. The application offers:",
-            overviewList: [
-                "Real-time messaging with typing indicators",
-                "Multiple chat room support",
-                "User authentication and profile management",
-                "Message reactions and reply threads",
-                "Online/Away user status tracking",
-                "Emoji support in messages",
-                "Avatar customization",
-                "Message history persistence"
-            ],
+        challenges: [
+            {
+                title: "Performance",
+                details: ["Implementing lazy loading for galleries", "Optimizing database queries"]
+            },
+            {
+                title: "API Integration",
+                details: ["Managing API rate limiting", "Handling timeouts and failures", "Implementing error handling"]
+            },
+            {
+                title: "User Experience",
+                details: ["Building responsive image galleries", "Implementing smooth infinite scroll", "Creating intuitive generation interface", "Managing loading states effectively"]
+            },
+            {
+                title: "Storage",
+                details: ["Efficient image storage implementation", "Temporary file management"]
+            },
 
-            techStack: {
-                frontend: [
-                    "Vue 3 with Composition API",
-                    "Vuex for state management",
-                    "Vue Router for navigation",
-                    "Tailwind CSS for styling",
-                    "Socket.IO client",
-                    "JWT for authentication"
-                ],
-                backend: [
-                    "Node.js & Express.js",
-                    "MongoDB with Mongoose",
-                    "Socket.IO for real-time features",
-                    "Redis for session management",
-                    "JWT authentication",
-                    "RESTful API architecture"
+        ],
+        github: "https://github.com/ej2601/image_generation_platform",
+        demo: "https://youtu.be/XiYhNvjR6wY"
+    },
+    project2: {
+        title: "Real-Time Chat Application",
+        gallery: [
+            "chat_app_1.PNG",
+            "chat_app_2.PNG",
+            "chat_app_3.PNG"
+        ],
+        video: "https://youtube.com/embed/FFcZ-qWmQXQ",
+        overview: "A modern real-time chat application built with MERN stack (MongoDB, Express.js, Vue.js, Node.js) featuring Socket.IO for real-time communication. The application offers:",
+        overviewList: [
+            "Real-time messaging with typing indicators",
+            "Multiple chat room support",
+            "User authentication and profile management",
+            "Message reactions and reply threads",
+            "Online/Away user status tracking",
+            "Emoji support in messages",
+            "Avatar customization",
+            "Message history persistence"
+        ],
+
+        techStack: {
+            frontend: [
+                "Vue 3 with Composition API",
+                "Vuex for state management",
+                "Vue Router for navigation",
+                "Tailwind CSS for styling",
+                "Socket.IO client",
+                "JWT for authentication"
+            ],
+            backend: [
+                "Node.js & Express.js",
+                "MongoDB with Mongoose",
+                "Socket.IO for real-time features",
+                "Redis for session management",
+                "JWT authentication",
+                "RESTful API architecture"
+            ]
+        },
+        challenges: [
+            {
+                title: "Real-Time Communication",
+                details: [
+                    "Implementing bidirectional Socket.IO communication",
+                    "Managing multiple chat rooms simultaneously",
+                    "Handling user presence and typing indicators",
+                    "Ensuring message delivery and order"
                 ]
             },
-            challenges: [
-                {
-                    title: "Real-Time Communication",
-                    details: [
-                        "Implementing bidirectional Socket.IO communication",
-                        "Managing multiple chat rooms simultaneously",
-                        "Handling user presence and typing indicators",
-                        "Ensuring message delivery and order"
-                    ]
-                },
-                {
-                    title: "State Management",
-                    details: [
-                        "Synchronizing real-time updates across components",
-                        "Managing complex UI states",
-                        "Handling offline/online transitions",
-                        "Maintaining user session state"
-                    ]
-                },
-                {
-                    title: "User Experience",
-                    details: [
-                        "Creating smooth animations and transitions",
-                        "Implementing responsive design",
-                        "Building intuitive message threading",
-                        "Managing loading states and error handling"
-                    ]
-                },
-                {
-                    title: "Performance",
-                    details: [
-                        "Optimizing real-time message delivery",
-                        "Implementing efficient message pagination",
-                        "Managing memory usage with large message histories",
-                        "Optimizing Redis cache usage"
-                    ]
-                }
-            ],
-
-            github: "https://github.com/ej2601/ej_chat_app",
-            demo: "https://ej-chat-app.vercel.app" // Based on CORS settings in server.js
-        },
-        project3: {
-            title: "Dynamic Blog CMS",
-            gallery: [
-                "blog-1.PNG", // Admin panel view
-                "blog-3.PNG",     // Post creation/editing interface
-                "blog-2.PNG"    // Public blog view
-            ],
-            video: "https://youtube.com/embed/8qj47LbH4ms", // Add your demo video
-            overview: "A custom Content Management System (CMS) built with PHP, MySQL, and Bootstrap that provides a robust platform for blog management with features including:",
-            overviewList: [
-                "User-friendly post creation and management",
-                "Dynamic content sections (text, images, videos)",
-                "Category management system",
-                "Responsive design across devices",
-                "Admin authentication system",
-                "Media file management",
-                "SEO-friendly URL structure",
-                "Intuitive admin dashboard"
-            ],
-
-            techStack: {
-                frontend: [
-                    "Bootstrap 5.3.2",
-                    "Custom CSS",
-                    "JavaScript for dynamic interactions",
-                    "Responsive design principles",
-                    "Modern UI components"
-                ],
-                backend: [
-                    "PHP 7+",
-                    "MySQL/PDO",
-                    "Session management",
-                    "File system operations",
-                    "Secure authentication system"
+            {
+                title: "State Management",
+                details: [
+                    "Synchronizing real-time updates across components",
+                    "Managing complex UI states",
+                    "Handling offline/online transitions",
+                    "Maintaining user session state"
                 ]
             },
+            {
+                title: "User Experience",
+                details: [
+                    "Creating smooth animations and transitions",
+                    "Implementing responsive design",
+                    "Building intuitive message threading",
+                    "Managing loading states and error handling"
+                ]
+            },
+            {
+                title: "Performance",
+                details: [
+                    "Optimizing real-time message delivery",
+                    "Implementing efficient message pagination",
+                    "Managing memory usage with large message histories",
+                    "Optimizing Redis cache usage"
+                ]
+            }
+        ],
 
-            challenges: [
-                {
-                    title: "Content Management",
-                    details: [
-                        "Implementing flexible content section types",
-                        "Managing media uploads securely",
-                        "Creating an intuitive post editor",
-                        "Maintaining content relationships"
-                    ]
-                },
-                {
-                    title: "Security",
-                    details: [
-                        "Secure admin authentication",
-                        "Protected file uploads",
-                        "SQL injection prevention using PDO",
-                        "Session management security"
-                    ]
-                },
-                {
-                    title: "User Experience",
-                    details: [
-                        "Dynamic category management",
-                        "Responsive image handling",
-                        "Intuitive content editing interface",
-                        "Smooth navigation and transitions"
-                    ]
-                }
+        github: "https://github.com/ej2601/ej_chat_app",
+        demo: "https://ej-chat-app.vercel.app"
+    },
+    project3: {
+        title: "Dynamic Blog CMS",
+        gallery: [
+            "blog-1.PNG",
+            "blog-3.PNG",
+            "blog-2.PNG"
+        ],
+        video: "https://youtube.com/embed/8qj47LbH4ms",
+        overview: "A custom Content Management System (CMS) built with PHP, MySQL, and Bootstrap that provides a robust platform for blog management with features including:",
+        overviewList: [
+            "User-friendly post creation and management",
+            "Dynamic content sections (text, images, videos)",
+            "Category management system",
+            "Responsive design across devices",
+            "Admin authentication system",
+            "Media file management",
+            "SEO-friendly URL structure",
+            "Intuitive admin dashboard"
+        ],
+
+        techStack: {
+            frontend: [
+                "Bootstrap 5.3.2",
+                "Custom CSS",
+                "JavaScript for dynamic interactions",
+                "Responsive design principles",
+                "Modern UI components"
             ],
-
-
-            github: "https://github.com/ej2601/BlogCMS",
-            demo: "https://youtu.be/8qj47LbH4ms"
+            backend: [
+                "PHP 7+",
+                "MySQL/PDO",
+                "Session management",
+                "File system operations",
+                "Secure authentication system"
+            ]
         },
 
-    };
+        challenges: [
+            {
+                title: "Content Management",
+                details: [
+                    "Implementing flexible content section types",
+                    "Managing media uploads securely",
+                    "Creating an intuitive post editor",
+                    "Maintaining content relationships"
+                ]
+            },
+            {
+                title: "Security",
+                details: [
+                    "Secure admin authentication",
+                    "Protected file uploads",
+                    "SQL injection prevention using PDO",
+                    "Session management security"
+                ]
+            },
+            {
+                title: "User Experience",
+                details: [
+                    "Dynamic category management",
+                    "Responsive image handling",
+                    "Intuitive content editing interface",
+                    "Smooth navigation and transitions"
+                ]
+            }
+        ],
+
+        github: "https://github.com/ej2601/BlogCMS",
+        demo: "https://youtu.be/8qj47LbH4ms"
+    },
+    project4: {
+        title: "IndiGalleria - Art Gallery & E-commerce Platform",
+        gallery: [
+            "home-page.PNG",
+            "artwork-detail.PNG",
+            "artist-profile.PNG"
+            // Add more screenshots here if you have them (e.g., cart, admin dashboard, checkout)
+        ],
+        video: "", // Replace with actual YouTube embed URL if you make a demo video, otherwise leave empty
+        overview: "IndiGalleria is a comprehensive, production-ready art gallery and e-commerce platform built entirely with React. It connects artists, buyers, and resellers with role-based dashboards (User, Artist, Admin). The application allows users to:",
+        overviewList: [
+            "Browse and discover artworks with advanced filters and search",
+            "Purchase original art and prints through secure checkout",
+            "Create and manage artist profiles with artwork portfolios",
+            "Participate in virtual exhibitions and events",
+            "Read art-related blogs and educational content",
+            "Manage wishlists, shopping carts, and order history",
+            "Track orders and purchase history",
+            "Connect with artists and the community",
+            "Access dedicated dashboards for artists (upload/management) and admins (full control)"
+        ],
+
+        techStack: {
+            frontend: [
+                "React 18.3.1 for component-based UI development",
+                "React Router DOM for client-side routing and navigation",
+                "React Bootstrap for responsive grid system and components",
+                "Styled Components for dynamic CSS-in-JS styling",
+                "React Slick for image carousels and sliders",
+                "TinyMCE React for rich text editing",
+                "React Toastify for notification system",
+                "Axios for HTTP requests and API communication",
+                "Country flag components for international features",
+                "React CountUp for animated number displays",
+                "React Data Table Component for data management",
+                "React Helmet Async for SEO optimization"
+            ],
+            backend: [] // Frontend-only React application (no custom backend shown)
+        },
+        challenges: [
+            {
+                title: "Complex State Management",
+                details: [
+                    "Implementing multiple contexts for cart, currency, authentication",
+                    "Managing global state across different user roles"
+                ]
+            },
+            {
+                title: "Role-Based Access Control",
+                details: [
+                    "Implementing protected routes for different user types",
+                    "Managing permissions for admin, artist, and user features",
+                    "Creating dynamic UI based on user roles"
+                ]
+            },
+            {
+                title: "E-commerce Integration",
+                details: [
+                    "Building secure checkout process with multiple payment options",
+                    "Managing shopping cart state across sessions"
+                ]
+            },
+            {
+                title: "Performance Optimization",
+                details: [
+                    "Implementing lazy loading for artwork galleries",
+                    "Optimizing image loading and compression",
+                    "Managing large datasets with pagination"
+                ]
+            },
+            {
+                title: "User Experience",
+                details: [
+                    "Creating responsive design for mobile and desktop",
+                    "Building intuitive navigation for complex features"
+                ]
+            }
+        ],
+        github: "",  
+        demo: "https://indigalleria.com"
+    }
+};
 
     if (modalLinks.length === 0) return;
 
