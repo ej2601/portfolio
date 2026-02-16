@@ -672,7 +672,7 @@ if (project.video && project.video.trim() !== '') {
             // Show/hide backend section based on whether it exists
 // Show/hide backend section based on whether it exists
 const modalTechStack = modal.querySelector('#modal-tech-stack');
-const backendHeading = modalTechStack.querySelector('h4:nth-of-type(2)'); // The "Backend" h4
+const backendHeading = modalTechStack.querySelector('h4:nth-of-type(2)');
 const backendList = modal.querySelector('#modal-tech-backend');
 
 if (project.techStack.backend && project.techStack.backend.length > 0) {
