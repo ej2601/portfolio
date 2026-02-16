@@ -670,12 +670,18 @@ if (project.video && project.video.trim() !== '') {
             modal.querySelector('#modal-tech-frontend').innerHTML = project.techStack.frontend.map(item => `<li>${item}</li>`).join("");
             
             // Show/hide backend section based on whether it exists
-const backendSection = modal.querySelector('#modal-tech-backend').parentElement;
+// Show/hide backend section based on whether it exists
+const modalTechStack = modal.querySelector('#modal-tech-stack');
+const backendHeading = modalTechStack.querySelector('h4:nth-of-type(2)'); // The "Backend" h4
+const backendList = modal.querySelector('#modal-tech-backend');
+
 if (project.techStack.backend && project.techStack.backend.length > 0) {
-    modal.querySelector('#modal-tech-backend').innerHTML = project.techStack.backend.map(item => `<li>${item}</li>`).join("");
-    backendSection.style.display = 'block';
+    backendList.innerHTML = project.techStack.backend.map(item => `<li>${item}</li>`).join("");
+    backendHeading.style.display = 'block';
+    backendList.style.display = 'block';
 } else {
-    backendSection.style.display = 'none';
+    backendHeading.style.display = 'none';
+    backendList.style.display = 'none';
 }
 
            // Populate challenges with subsections
