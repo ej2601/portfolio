@@ -560,7 +560,7 @@ function initModals() {
     gallery: [
         "home-page.PNG",
         "artwork-detail.PNG",
-        "artist-profile.PNG"
+        "blog-list.PNG"
     ],
     video: "", // Empty = video section will be hidden
     overview: "IndiGalleria is a comprehensive, production-ready art gallery and e-commerce platform built entirely with React. It connects artists, buyers, and resellers with role-based dashboards (User, Artist, Admin). The application allows users to:",
