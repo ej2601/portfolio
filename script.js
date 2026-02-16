@@ -31,30 +31,34 @@ const skillsData = [
     {
         category: "Frontend Development",
         skills: [
-            { name: "HTML5", proficiency: 50, icon: "fab fa-html5" },
-            { name: "CSS3", proficiency: 50, icon: "fab fa-css3-alt" },
-            { name: "JavaScript", proficiency: 50, icon: "fab fa-js" },
-            { name: "Vue.js", proficiency: 50, icon: "fab fa-react" },
-            { name: "Tailwind CSS", proficiency: 50, icon: "fab fa-css3-alt" }
+            { name: "React", icon: "fab fa-react" },
+            { name: "Next.js", icon: "fas fa-code" }, // Font Awesome doesn't have official Next.js icon; using a placeholder (you can replace with custom SVG later)
+            { name: "JavaScript", icon: "fab fa-js" },
+            { name: "HTML5", icon: "fab fa-html5" },
+            { name: "CSS3", icon: "fab fa-css3-alt" },
+            { name: "Tailwind CSS", icon: "fas fa-wind" }, // Placeholder icon (no official FA icon)
+            { name: "Bootstrap", icon: "fab fa-bootstrap" },
+            { name: "Styled Components", icon: "fas fa-paint-brush" }
         ]
     },
-
     {
-        category: "Backend Development",
+        category: "Backend & Databases",
         skills: [
-            { name: "Node.js", proficiency: 50, icon: "fab fa-node-js" },
-            { name: "Express", proficiency: 50, icon: "fas fa-server" },
-            { name: "Django", proficiency: 50, icon: "fas fa-horse" },
-            { name: "MongoDB", proficiency: 50, icon: "fas fa-database" },
-            { name: "MySQL", proficiency: 50, icon: "fas fa-database" },
-            { name: "Laravel", proficiency: 50, icon: "fas fa-php" },
+            { name: "Node.js", icon: "fab fa-node-js" },
+            { name: "Express.js", icon: "fas fa-server" },
+            { name: "Laravel", icon: "fab fa-laravel" },
+            { name: "MongoDB", icon: "fas fa-leaf" },
+            { name: "MySQL", icon: "fas fa-database" }
         ]
     },
     {
         category: "Tools & Others",
         skills: [
-            { name: "Git", proficiency: 50, icon: "fab fa-git-alt" },
-            { name: "Responsive Design", proficiency: 50, icon: "fas fa-mobile-alt" }
+            { name: "Git & GitHub", icon: "fab fa-github" },
+            { name: "VS Code", icon: "fas fa-code" },
+            { name: "Responsive Design", icon: "fas fa-mobile-alt" },
+            { name: "REST APIs", icon: "fas fa-exchange-alt" },
+            { name: "Axios", icon: "fas fa-plug" }
         ]
     }
 ];
@@ -63,6 +67,9 @@ const skillsData = [
 function initSkills() {
     const skillsCategoriesContainer = document.getElementById('skills-categories');
     if (!skillsCategoriesContainer) return;
+
+    // Clear any existing content
+    skillsCategoriesContainer.innerHTML = '';
 
     // Generate HTML for each category and skill
     skillsData.forEach(category => {
@@ -83,7 +90,6 @@ function initSkills() {
             skillItem.innerHTML = `
                 <div class="skill-icon"><i class="${skill.icon}"></i></div>
                 <div class="skill-name">${skill.name}</div>
-                <div class="skill-bar"><div class="skill-level" style="width: ${skill.proficiency}%;"></div></div>
             `;
 
             skillsGrid.appendChild(skillItem);
