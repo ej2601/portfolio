@@ -38,7 +38,7 @@ const skillsData = [
             { name: "CSS3", icon: "fab fa-css3-alt" },
             { name: "Tailwind CSS", icon: "fas fa-wind" }, // Placeholder icon (no official FA icon)
             { name: "Bootstrap", icon: "fab fa-bootstrap" },
-            { name: "Styled Components", icon: "fas fa-paint-brush" }
+            
         ]
     },
     {
