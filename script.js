@@ -556,86 +556,85 @@ function initModals() {
         demo: "https://youtu.be/8qj47LbH4ms"
     },
     project4: {
-        title: "IndiGalleria - Art Gallery & E-commerce Platform",
-        gallery: [
-            "home-page.PNG",
-            "artwork-detail.PNG",
-            "artist-profile.PNG"
-             
-        ],
-        video: "", // Replace with actual YouTube embed URL if you make a demo video, otherwise leave empty
-        overview: "IndiGalleria is a comprehensive, production-ready art gallery and e-commerce platform built entirely with React. It connects artists, buyers, and resellers with role-based dashboards (User, Artist, Admin). The application allows users to:",
-        overviewList: [
-            "Browse and discover artworks with advanced filters and search",
-            "Purchase original art and prints through secure checkout",
-            "Create and manage artist profiles with artwork portfolios",
-            "Participate in virtual exhibitions and events",
-            "Read art-related blogs and educational content",
-            "Manage wishlists, shopping carts, and order history",
-            "Track orders and purchase history",
-            "Connect with artists and the community",
-            "Access dedicated dashboards for artists (upload/management) and admins (full control)"
-        ],
+    title: "IndiGalleria - Art Gallery & E-commerce Platform",
+    gallery: [
+        "home-page.PNG",
+        "artwork-detail.PNG",
+        "artist-profile.PNG"
+    ],
+    video: "", // Empty = video section will be hidden
+    overview: "IndiGalleria is a comprehensive, production-ready art gallery and e-commerce platform built entirely with React. It connects artists, buyers, and resellers with role-based dashboards (User, Artist, Admin). The application allows users to:",
+    overviewList: [
+        "Browse and discover artworks with advanced filters and search",
+        "Purchase original art and prints through secure checkout",
+        "Create and manage artist profiles with artwork portfolios",
+        "Participate in virtual exhibitions and events",
+        "Read art-related blogs and educational content",
+        "Manage wishlists, shopping carts, and order history",
+        "Track orders and purchase history",
+        "Connect with artists and the community",
+        "Access dedicated dashboards for artists (upload/management) and admins (full control)"
+    ],
 
-        techStack: {
-            frontend: [
-                "React 18.3.1 for component-based UI development",
-                "React Router DOM for client-side routing and navigation",
-                "React Bootstrap for responsive grid system and components",
-                "Styled Components for dynamic CSS-in-JS styling",
-                "React Slick for image carousels and sliders",
-                "TinyMCE React for rich text editing",
-                "React Toastify for notification system",
-                "Axios for HTTP requests and API communication",
-                "Country flag components for international features",
-                "React CountUp for animated number displays",
-                "React Data Table Component for data management",
-                "React Helmet Async for SEO optimization"
-            ],
-             
+    techStack: {
+        frontend: [
+            "React 18.3.1 for component-based UI development",
+            "React Router DOM for client-side routing and navigation",
+            "React Bootstrap for responsive grid system and components",
+            "Styled Components for dynamic CSS-in-JS styling",
+            "React Slick for image carousels and sliders",
+            "TinyMCE React for rich text editing",
+            "React Toastify for notification system",
+            "Axios for HTTP requests and API communication",
+            "Country flag components for international features",
+            "React CountUp for animated number displays",
+            "React Data Table Component for data management",
+            "React Helmet Async for SEO optimization"
+        ]
+        // No backend array = backend section will be hidden
+    },
+    challenges: [
+        {
+            title: "Complex State Management",
+            details: [
+                "Implementing multiple contexts for cart, currency, authentication",
+                "Managing global state across different user roles"
+            ]
         },
-        challenges: [
-            {
-                title: "Complex State Management",
-                details: [
-                    "Implementing multiple contexts for cart, currency, authentication",
-                    "Managing global state across different user roles"
-                ]
-            },
-            {
-                title: "Role-Based Access Control",
-                details: [
-                    "Implementing protected routes for different user types",
-                    "Managing permissions for admin, artist, and user features",
-                    "Creating dynamic UI based on user roles"
-                ]
-            },
-            {
-                title: "E-commerce Integration",
-                details: [
-                    "Building secure checkout process with multiple payment options",
-                    "Managing shopping cart state across sessions"
-                ]
-            },
-            {
-                title: "Performance Optimization",
-                details: [
-                    "Implementing lazy loading for artwork galleries",
-                    "Optimizing image loading and compression",
-                    "Managing large datasets with pagination"
-                ]
-            },
-            {
-                title: "User Experience",
-                details: [
-                    "Creating responsive design for mobile and desktop",
-                    "Building intuitive navigation for complex features"
-                ]
-            }
-        ],
-        
-        demo: "https://indigalleria.com"
-    }
+        {
+            title: "Role-Based Access Control",
+            details: [
+                "Implementing protected routes for different user types",
+                "Managing permissions for admin, artist, and user features",
+                "Creating dynamic UI based on user roles"
+            ]
+        },
+        {
+            title: "E-commerce Integration",
+            details: [
+                "Building secure checkout process with multiple payment options",
+                "Managing shopping cart state across sessions"
+            ]
+        },
+        {
+            title: "Performance Optimization",
+            details: [
+                "Implementing lazy loading for artwork galleries",
+                "Optimizing image loading and compression",
+                "Managing large datasets with pagination"
+            ]
+        },
+        {
+            title: "User Experience",
+            details: [
+                "Creating responsive design for mobile and desktop",
+                "Building intuitive navigation for complex features"
+            ]
+        }
+    ],
+    github: "", // Empty = GitHub button will be hidden
+    demo: "https://indigalleria.com"
+}
 };
 
     if (modalLinks.length === 0) return;
@@ -651,29 +650,53 @@ function initModals() {
 
             // Populate modal content
             modal.querySelector('#modal-title').textContent = project.title;
-            const modalGallery = modal.querySelector('#modal-gallery');
-            modalGallery.innerHTML = project.gallery.map(src =>
-                `<img src="${src}" alt="Project Screenshot">`
-            ).join("");
-            modal.querySelector('#modal-video').innerHTML =
-                `<iframe width="560" height="315" src="${project.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+const modalGallery = modal.querySelector('#modal-gallery');
+modalGallery.innerHTML = project.gallery.map(src =>
+    `<img src="${src}" alt="Project Screenshot">`
+).join("");
+            // Show/hide video section based on whether video exists
+const modalVideoContainer = modal.querySelector('#modal-video');
+if (project.video && project.video.trim() !== '') {
+    modalVideoContainer.innerHTML =
+        `<iframe width="560" height="315" src="${project.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    modalVideoContainer.style.display = 'block';
+} else {
+    modalVideoContainer.innerHTML = '';
+    modalVideoContainer.style.display = 'none';
+}
             modal.querySelector('#modal-overview').textContent = project.overview;
             modal.querySelector('#modal-overview-list').innerHTML = project.overviewList.map(item => `<li>${item}</li>`).join("");
 
             modal.querySelector('#modal-tech-frontend').innerHTML = project.techStack.frontend.map(item => `<li>${item}</li>`).join("");
-            modal.querySelector('#modal-tech-backend').innerHTML = project.techStack.backend.map(item => `<li>${item}</li>`).join("");
+            
+            // Show/hide backend section based on whether it exists
+const backendSection = modal.querySelector('#modal-tech-backend').parentElement;
+if (project.techStack.backend && project.techStack.backend.length > 0) {
+    modal.querySelector('#modal-tech-backend').innerHTML = project.techStack.backend.map(item => `<li>${item}</li>`).join("");
+    backendSection.style.display = 'block';
+} else {
+    backendSection.style.display = 'none';
+}
 
-            // Populate challenges with subsections
-            const challengesContainer = modal.querySelector('#modal-challenges');
-            challengesContainer.innerHTML = project.challenges.map(challenge => `
-                <div class="challenge-section">
-                    <h4>${challenge.title}</h4>
-                    <ul>${challenge.details.map(detail => `<li>${detail}</li>`).join("")}</ul>
-                </div>
-            `).join("");
+           // Populate challenges with subsections
+const challengesContainer = modal.querySelector('#modal-challenges');
+challengesContainer.innerHTML = project.challenges.map(challenge => `
+    <div class="challenge-section">
+        <h4>${challenge.title}</h4>
+        <ul>${challenge.details.map(detail => `<li>${detail}</li>`).join("")}</ul>
+    </div>
+`).join("");
 
-            modal.querySelector('#modal-github').href = project.github;
-            modal.querySelector('#modal-demo').href = project.demo;
+// Show/hide GitHub button based on whether link exists
+const githubBtn = modal.querySelector('#modal-github');
+if (project.github && project.github.trim() !== '' && project.github !== '#') {
+    githubBtn.href = project.github;
+    githubBtn.style.display = 'inline-flex';
+} else {
+    githubBtn.style.display = 'none';
+}
+
+modal.querySelector('#modal-demo').href = project.demo;
 
             // Show modal with animation
             modalContainer.style.display = 'block';
